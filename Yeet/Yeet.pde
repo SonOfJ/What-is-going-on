@@ -49,6 +49,35 @@ class Ball extends Thing implements Moveable {
 
   void move() {
     /* ONE PERSON WRITE THIS */
+    float x = this.x;
+    float y = this.y;
+    float num = random(4);
+    if (num == 0){
+      x += random(1);
+    }
+    else if (num == 1){
+      y += random(1);
+    }
+    else if (num == 2){
+      x -= random(1);
+    }
+    else{
+      y -= random(1);
+    }
+    if (x <= 0){
+      x += random(12);
+    }
+    else if (x >= 1000){
+      x -= random(12);
+    }
+    if (y <= 0){
+      y += random(12);
+    }
+    else if (y >= 800){
+      y -= random(20);
+    }
+    this.x = x;
+    this.y = y;
   }
 }
 
