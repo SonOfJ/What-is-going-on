@@ -22,9 +22,8 @@ class Rock extends Thing {
   }
 
   void display() {
-    circle(x, y, 55);
+    /* ONE PERSON WRITE THIS */
   }
-}
 
 public class LivingRock extends Rock implements Moveable {
   LivingRock(float x, float y) {
