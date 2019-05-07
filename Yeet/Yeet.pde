@@ -39,6 +39,9 @@ public class LivingRock extends Rock implements Moveable {
 
 class Ball extends Thing implements Moveable {
   float ballsize = (int)random(50);
+  float R = (int)random(225);
+  float G = (int)random(225);
+  float B = (int)random(225);
   Ball(float x, float y) {
 
     super(x, y);
@@ -46,6 +49,7 @@ class Ball extends Thing implements Moveable {
 
   void display() {
     /* ONE PERSON WRITE THIS */
+    fill(R, G, B);
     circle(this.x, this.y, ballsize / 2);
   }
 
