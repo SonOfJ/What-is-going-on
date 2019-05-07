@@ -43,7 +43,6 @@ class Ball extends Thing implements Moveable {
   float G = (int)random(225);
   float B = (int)random(225);
   Ball(float x, float y) {
-
     super(x, y);
   }
 
