@@ -46,7 +46,7 @@ class Ball extends Thing implements Moveable {
 
   void display() {
     /* ONE PERSON WRITE THIS */
-    ellipse(this.x, this.y, ballsize, ballsize);
+    circle(this.x, this.y, ballsize / 2);
   }
 
   void move() {
@@ -66,16 +66,16 @@ class Ball extends Thing implements Moveable {
     else{
       y -= random(-10,10);
     }
-    if (x <= 0 + (2 * this.ballsize)){
+    if (x <= 0 + this.ballsize){
       x += random(10);
     }
-    else if (x >= 1000 - (2 * this.ballsize)){
+    else if (x >= 1000 - this.ballsize){
       x -= random(10);
     }
-    if (y <= 0 + (2 * this.ballsize)){
+    if (y <= 0 + this.ballsize){
       y += random(10);
     }
-    else if (y >= 800 - (2 * this.ballsize)){
+    else if (y >= 800 - this.ballsize){
       y -= random(10);
     }
     this.x = x;
