@@ -66,16 +66,16 @@ class Ball extends Thing implements Moveable {
     else{
       y -= random(-10,10);
     }
-    if (x == 25){
+    if (x <= 0 + (2 * this.ballsize)){
       x += random(10);
     }
-    else if (x == 175){
+    else if (x >= 1000 - (2 * this.ballsize)){
       x -= random(10);
     }
-    if (y <= 25){
+    if (y <= 0 + (2 * this.ballsize)){
       y += random(10);
     }
-    else if (y >= 775){
+    else if (y >= 800 - (2 * this.ballsize)){
       y -= random(10);
     }
     this.x = x;
