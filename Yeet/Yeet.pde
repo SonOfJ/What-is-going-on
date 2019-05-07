@@ -38,6 +38,7 @@ public class LivingRock extends Rock implements Moveable {
 }
 
 class Ball extends Thing implements Moveable {
+  float ballsize = (int)random(50);
   Ball(float x, float y) {
 
     super(x, y);
@@ -45,6 +46,7 @@ class Ball extends Thing implements Moveable {
 
   void display() {
     /* ONE PERSON WRITE THIS */
+    ellipse(this.x, this.y, ballsize, ballsize);
   }
 
   void move() {
