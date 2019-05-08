@@ -19,11 +19,6 @@ class Rock extends Thing implements Collideable {
   PImage img;
   Rock(float x, float y) {
     super(x, y);
-    if ((int)random(2) == 0) { //Randomly select one of the images of a rock.
-      img = loadImage("FirstRock.jpg");
-    } else {
-      img = loadImage("SecondRock.jpg");
-    }
   }
   void display() {
     image(img, x, y, 100, 100);
@@ -125,10 +120,12 @@ void setup() {
   }
   for (int i = 0; i < 1; i = i + 1) {
     Rock r = new Rock(50+random(width-100), 50+random(height-100));
+    r.img = loadImage("FirstRock.jpg");
     thingsToDisplay.add(r);
   }
   for (int i = 0; i < 1; i++) {
     LivingRock m = new LivingRock(50+random(width-100), 50+random(height-100));
+    m.img = loadImage("SecondRock.jpg");
     thingsToDisplay.add(m);
     thingsToMove.add(m);
   }
