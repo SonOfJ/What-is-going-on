@@ -15,7 +15,7 @@ abstract class Thing implements Displayable {
   }
   abstract void display();
 }
-class Rock extends Thing {
+class Rock extends Thing implements Collideable {
   PImage img;
   Rock(float x, float y) {
     super(x, y);
@@ -27,6 +27,9 @@ class Rock extends Thing {
   }
   void display() {
     image(img, x, y, 100, 100);
+  }
+  boolean isTouching(Thing other) {
+    return x == other.x && y == other.y;
   }
 }
 public class LivingRock extends Rock implements Moveable {
@@ -110,6 +113,7 @@ class Ball extends Thing implements Moveable {
 
 ArrayList<Displayable> thingsToDisplay;
 ArrayList<Moveable> thingsToMove;
+ArrayList<Collideable> ListOfCollideables;
 void setup() {
   size(1000, 800);
   thingsToDisplay = new ArrayList<Displayable>();
