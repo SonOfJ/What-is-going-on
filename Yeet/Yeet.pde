@@ -20,10 +20,10 @@ class Rock extends Thing {
   PImage img;
   Rock(float x, float y) {
     super(x, y);
-    if ((int)random(1) == 0) {
+    if ((int)random(1) == 0) { //Randomly select one of the images of a rock.
       img = loadImage("FirstRock.jpg");
     } else {
-      img = loadImage("SecondRock.jpg";
+      img = loadImage("SecondRock.jpg");
     }
   }
 
