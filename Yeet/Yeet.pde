@@ -61,11 +61,12 @@ public class LivingRock extends Rock implements Moveable {
   }
   void display() {
     super.display();
-    fill(255); //White
-    ellipse(x + 5, y + 5, 10, 5); //Right eye.
-    ellipse(x + 15, y + 5, 10, 5); //Left eye.
-    ellipse(x + 5, y + 5, 5, 5); //Right iris
-    ellipse(x + 15, y + 5, 10, 5); //Left iris.
+    fill(255); //White.
+    ellipse(x + 25, y + 40, 40, 25); //Right eye.
+    ellipse(x + 75, y + 40, 40, 25); //Left eye.
+    fill(0); //Black.
+    ellipse(x + 25, y + 40, 20, 20); //Right iris
+    ellipse(x + 75, y + 40, 20, 20); //Left iris.
   }
 }
 
