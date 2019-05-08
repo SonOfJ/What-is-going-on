@@ -118,9 +118,9 @@ void setup() {
     thingsToDisplay.add(b);
     thingsToMove.add(b);
   }
-  for (int i = 0; i < 1; i = i + 1) {
+  for (int i = 0; i < 3; i = i + 1) {
     Rock r = new Rock(50+random(width-100), 50+random(height-100));
-    r.img = loadImage("FirstRock.jpg");
+    r.img = loadImage("Dead" + i + 1 + ".jpg");
     thingsToDisplay.add(r);
   }
   for (int i = 0; i < 1; i++) {
