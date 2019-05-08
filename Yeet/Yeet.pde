@@ -38,22 +38,22 @@ public class LivingRock extends Rock implements Moveable {
   }
   void move() {
     float rand = (int)random(4);
-    if (rand == 0) { //Move to the right.
+    if (rand == 0 && x + 100 < 1000) { //Move to the right.
       for (int i = 0; i < 5; i = i + 1) {
         x = x + 1;
       }
     }
-    if (rand == 1) { //Move down.
+    if (rand == 1 && y + 100 < 800) { //Move down.
       for (int i = 0; i < 5; i = i + 1) {
         y = y + 1;
       }
     }
-    if (rand == 2) { //Move to the left.
+    if (rand == 2 && x > 0) { //Move to the left.
       for (int i = 0; i < 5; i = i + 1) {
         x = x - 1;
       }
     }
-    if (rand == 3) { //Move up.
+    if (rand == 3 && y > 0) { //Move up.
       for (int i = 0; i < 5; i = i + 1) {
         y = y - 1;
       }
