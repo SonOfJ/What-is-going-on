@@ -122,10 +122,12 @@ void setup() {
     Ball b = new Ball(50+random(width-100), 50+random(height-100));
     thingsToDisplay.add(b);
     thingsToMove.add(b);
+  }
+  for (int i = 0; i < 1; i = i + 1) {
     Rock r = new Rock(50+random(width-100), 50+random(height-100));
     thingsToDisplay.add(r);
   }
-  for (int i = 0; i < 3; i++) {
+  for (int i = 0; i < 1; i++) {
     LivingRock m = new LivingRock(50+random(width-100), 50+random(height-100));
     thingsToDisplay.add(m);
     thingsToMove.add(m);
