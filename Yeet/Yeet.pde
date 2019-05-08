@@ -59,6 +59,14 @@ public class LivingRock extends Rock implements Moveable {
       }
     }
   }
+  void display() {
+    super.display();
+    fill(255); //White
+    ellipse(x + 5, y + 5, 10, 5); //Right eye.
+    ellipse(x + 15, y + 5, 10, 5); //Left eye.
+    ellipse(x + 5, y + 5, 5, 5); //Right iris
+    ellipse(x + 15, y + 5, 10, 5); //Left iris.
+  }
 }
 
 class Ball extends Thing implements Moveable {
