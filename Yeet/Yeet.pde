@@ -19,11 +19,6 @@ class Rock extends Thing implements Collideable {
   PImage img;
   Rock(float x, float y) {
     super(x, y);
-    if ((int)random(2) == 0) { //Randomly select one of the images of a rock.
-      img = loadImage("FirstRock.jpg");
-    } else {
-      img = loadImage("SecondRock.jpg");
-    }
   }
   void display() {
     image(img, x, y, 100, 100);
@@ -38,22 +33,22 @@ public class LivingRock extends Rock implements Moveable {
   }
   void move() {
     float rand = (int)random(4);
-    if (rand == 0) { //Move to the right.
+    if (rand == 0 && x + 100 < 1000) { //Move to the right.
       for (int i = 0; i < 5; i = i + 1) {
         x = x + 1;
       }
     }
-    if (rand == 1) { //Move down.
+    if (rand == 1 && y + 100 < 800) { //Move down.
       for (int i = 0; i < 5; i = i + 1) {
         y = y + 1;
       }
     }
-    if (rand == 2) { //Move to the left.
+    if (rand == 2 && x > 0) { //Move to the left.
       for (int i = 0; i < 5; i = i + 1) {
         x = x - 1;
       }
     }
-    if (rand == 3) { //Move up.
+    if (rand == 3 && y > 0) { //Move up.
       for (int i = 0; i < 5; i = i + 1) {
         y = y - 1;
       }
@@ -108,11 +103,15 @@ void setup() {
     Ball b = new Ball(50+random(width-100), 50+random(height-100));
     thingsToDisplay.add(b);
     thingsToMove.add(b);
+  }
+  for (int i = 0; i < 1; i = i + 1) {
     Rock r = new Rock(50+random(width-100), 50+random(height-100));
+    r.img = loadImage("FirstRock.jpg");
     thingsToDisplay.add(r);
   }
-  for (int i = 0; i < 3; i++) {
+  for (int i = 0; i < 1; i++) {
     LivingRock m = new LivingRock(50+random(width-100), 50+random(height-100));
+    m.img = loadImage("SecondRock.jpg");
     thingsToDisplay.add(m);
     thingsToMove.add(m);
   }
