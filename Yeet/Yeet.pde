@@ -87,6 +87,10 @@ class Ball extends Thing implements Moveable {
     }
     this.x += xmove;
     this.y += ymove;
+    
+  }
+  boolean isTouching(Rock r){
+    return this.x == r.x && this.y == r.y;
   }
 }
 
