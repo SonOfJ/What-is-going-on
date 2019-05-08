@@ -7,3 +7,5 @@ Ian & Joyce: Movement and display for ball.
 Jason & Charlotte: Rock, living rock, and general changes.
 Joyce: Ball changes.
 Ian was absent.
+5/8/19
+Jason: Moved loadImage from constructors to setup and took out repeated images.

@@ -69,6 +69,8 @@ class Ball extends Thing implements Moveable {
   float R = (int)random(225);
   float G = (int)random(225);
   float B = (int)random(225);
+  float xmove = random(-1, 1);
+  float ymove = random(-1,1);
   Ball(float x, float y) {
     super(x, y);
   }
@@ -77,30 +79,18 @@ class Ball extends Thing implements Moveable {
     circle(this.x, this.y, ballsize / 2);
   }
   void move() {
-    float x = this.x;
-    float y = this.y;
-    float num = (int)random(4);
-    if (num == 0) {
-      x += random(-10, 10);
-    } else if (num == 1) {
-      y += random(-10, 10);
-    } else if (num == 2) {
-      x -= random(-10, 10);
-    } else {
-      y -= random(-10, 10);
+    if (this.x + ballsize / 2 >= width || this.x - ballsize / 2 <= 0){
+      xmove *= -1;
     }
-    if (x <= 0 + this.ballsize) {
-      x += random(10);
-    } else if (x >= 1000 - this.ballsize) {
-      x -= random(10);
+    if (this.y + ballsize / 2 >= width || this.y - ballsize / 2 <= 0){
+      ymove *= -1;
     }
-    if (y <= 0 + this.ballsize) {
-      y += random(10);
-    } else if (y >= 800 - this.ballsize) {
-      y -= random(10);
-    }
-    this.x = x;
-    this.y = y;
+    this.x += xmove;
+    this.y += ymove;
+    
+  }
+  boolean isTouching(Rock r){
+    return this.x == r.x && this.y == r.y;
   }
 }
 
