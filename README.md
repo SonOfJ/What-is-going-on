@@ -4,6 +4,6 @@ Jason: Movement for living rock.
 Charlotte: Display for rock.
 Ian & Joyce: Movement and display for ball.
 5/7/19
-Jason & Charlotte: Rock and living rock changes.
-Joyce: Ball and general changes.
+Jason & Charlotte: Rock, living rock, and general changes.
+Joyce: Ball changes.
 Ian was absent.
