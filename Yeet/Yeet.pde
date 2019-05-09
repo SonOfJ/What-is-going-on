@@ -87,10 +87,31 @@ class Ball extends Thing implements Moveable {
     }
     this.x += xmove;
     this.y += ymove;
-    
   }
-  boolean isTouching(Rock r){
-    return this.x == r.x && this.y == r.y;
+  boolean isTouching(Thing rock){
+    return this.x == rock.x && this.y == rock.y;
+  }
+}
+class Superball extends Ball{
+  float ballsize = (int)random(50);
+  float xmove = random(-1, 1);
+  float ymove = random(-1,1);
+  Superball(float x, float y){
+    super(x, y);
+  }
+    void display() {
+    fill(250,128,114);
+    circle(this.x, this.y, ballsize / 2);
+  }
+  void move() {
+    if (this.x + ballsize / 2 >= width || this.x - ballsize / 2 <= 0){
+      xmove *= -1 * ((int)random(15) + 1);
+    }
+    if (this.y + ballsize / 2 >= width || this.y - ballsize / 2 <= 0){
+      ymove *= -1 + ((int)random(15) + 1);
+    }
+    this.x += xmove;
+    this.y += ymove;
   }
 }
 
@@ -103,8 +124,13 @@ void setup() {
   size(1000, 800);
   thingsToDisplay = new ArrayList<Displayable>();
   thingsToMove = new ArrayList<Moveable>();
-  for (int i = 0; i < 10; i++) {
+  for (int i = 0; i < 5; i++) {
     Ball b = new Ball(50+random(width-100), 50+random(height-100));
+    thingsToDisplay.add(b);
+    thingsToMove.add(b);
+  }
+  for (int i = 0; i < 5; i++) {
+    Ball b = new Superball(50+random(width-100), 50+random(height-100));
     thingsToDisplay.add(b);
     thingsToMove.add(b);
   }
