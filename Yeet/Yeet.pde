@@ -110,12 +110,12 @@ void setup() {
   }
   for (int i = 0; i < 3; i = i + 1) {
     Rock r = new Rock(50+random(width-100), 50+random(height-100));
-    r.img = loadImage("Dead" + i + 1 + ".jpg");
+    r.img = loadImage("Dead" + (i + 1) + ".jpg");
     thingsToDisplay.add(r);
   }
-  for (int i = 0; i < 1; i++) {
+  for (int i = 0; i < 3; i++) {
     LivingRock m = new LivingRock(50+random(width-100), 50+random(height-100));
-    m.img = loadImage("SecondRock.jpg");
+    m.img = loadImage("Live" + (i + 1) + ".jpg");
     thingsToDisplay.add(m);
     thingsToMove.add(m);
   }
