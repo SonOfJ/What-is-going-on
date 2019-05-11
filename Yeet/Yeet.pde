@@ -93,7 +93,7 @@ class Ball extends Thing implements Moveable {
   }
 }
 class Superball extends Ball{
-  float ballsize = (int)random(50);
+  float ballsize = (int)random(40) + 11;
   float xmove = random(-1, 1);
   float ymove = random(-1,1);
   Superball(float x, float y){
@@ -115,6 +115,28 @@ class Superball extends Ball{
   }
 }
 
+class Badball extends Ball{
+  float ballsize = (int)random(40) + 11;
+  float xmove = random(-1, 1);
+  float ymove = random(-1,1);
+  Badball(float x, float y){
+    super(x, y);
+  }
+    void display() {
+    fill(153,204,255);
+    circle(this.x, this.y, ballsize / 2);
+  }
+  void move() {
+    if (this.x + ballsize / 2 >= width || this.x - ballsize / 2 <= 0){
+      xmove /= -1 * ((int)random(15) + 1);
+    }
+    if (this.y + ballsize / 2 >= width || this.y - ballsize / 2 <= 0){
+      ymove /= -1 + ((int)random(15) + 1);
+    }
+    this.x += xmove;
+    this.y += ymove;
+  }
+}
 /*DO NOT EDIT THE REST OF THIS */
 
 ArrayList<Displayable> thingsToDisplay;
@@ -125,7 +147,7 @@ void setup() {
   thingsToDisplay = new ArrayList<Displayable>();
   thingsToMove = new ArrayList<Moveable>();
   for (int i = 0; i < 5; i++) {
-    Ball b = new Ball(50+random(width-100), 50+random(height-100));
+    Ball b = new Badball(50+random(width-100), 50+random(height-100));
     thingsToDisplay.add(b);
     thingsToMove.add(b);
   }
