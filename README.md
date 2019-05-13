@@ -9,3 +9,8 @@ Joyce: Ball changes.
 Ian was absent.
 5/8/19
 Jason: Moved loadImage from constructors to setup and took out repeated images.
+5/12/19
+Jason: Finished making 3 unique movement patterns for living rock. Upon the creation of a living rock, 1 of 3 modes will be selected.
+1. The rock moves faster near the center but slower at the edges.
+2. The rock moves slower at the center but faster at the edges.
+3. The rock has a constant speed.
