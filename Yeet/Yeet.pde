@@ -28,31 +28,30 @@ class Rock extends Thing implements Collideable {
   }
 }
 public class LivingRock extends Rock implements Moveable {
+  float xspd;
+  float yspd;
   LivingRock(float x, float y) {
     super(x, y);
+    if ((int)random(2) == 0) {
+      xspd = -1;
+    } else {
+      xspd = 1;
+    }
+    if ((int)random(2) == 0) {
+      yspd = -1;
+    } else {
+      yspd = 1;
+    }
   }
   void move() {
-    float rand = (int)random(4);
-    if (rand == 0 && x + 100 < 1000) { //Move to the right.
-      for (int i = 0; i < 5; i = i + 1) {
-        x = x + 1;
-      }
+    if (x + 100 >= 1000 || x <= 0) {
+      xspd = xspd * -1; 
     }
-    if (rand == 1 && y + 100 < 800) { //Move down.
-      for (int i = 0; i < 5; i = i + 1) {
-        y = y + 1;
-      }
+    if (y + 100 >= 800 || y <= 0) {
+      yspd = yspd * -1;
     }
-    if (rand == 2 && x > 0) { //Move to the left.
-      for (int i = 0; i < 5; i = i + 1) {
-        x = x - 1;
-      }
-    }
-    if (rand == 3 && y > 0) { //Move up.
-      for (int i = 0; i < 5; i = i + 1) {
-        y = y - 1;
-      }
-    }
+    x = x + xspd;
+    y = y + yspd;
   }
   void display() {
     super.display();
